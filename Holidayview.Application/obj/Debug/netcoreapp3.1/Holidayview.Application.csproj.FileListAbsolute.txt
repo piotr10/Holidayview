@@ -1,0 +1,13 @@
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\bin\Debug\netcoreapp3.1\Holidayview.Application.deps.json
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\bin\Debug\netcoreapp3.1\Holidayview.Application.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\bin\Debug\netcoreapp3.1\Holidayview.Application.pdb
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\bin\Debug\netcoreapp3.1\Holidayview.Domain.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\bin\Debug\netcoreapp3.1\Holidayview.Domain.pdb
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.csproj.AssemblyReference.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.AssemblyInfoInputs.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.AssemblyInfo.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.csproj.CoreCompileInputs.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.csproj.CopyComplete
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Application\obj\Debug\netcoreapp3.1\Holidayview.Application.pdb

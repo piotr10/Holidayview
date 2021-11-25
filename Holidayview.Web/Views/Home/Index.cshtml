@@ -1,0 +1,16 @@
+﻿@using System.ComponentModel.DataAnnotations
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+<div class="text-center">
+    <h1 class="nav-pro">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="@Url.Content("images/logo1.png")" />
+    <p>@{
+           String timeStamp = DateTime.Now.ToString("D");
+       }
+        @timeStamp
+        </p>
+</div>

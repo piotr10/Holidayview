@@ -1,0 +1,16 @@
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Infrastructure.deps.json
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Infrastructure.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Infrastructure.pdb
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Domain.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Domain.pdb
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.csproj.AssemblyReference.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.AssemblyInfoInputs.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.AssemblyInfo.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.csproj.CoreCompileInputs.cache
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.csproj.CopyComplete
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.pdb
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Infrastructure.runtimeconfig.json
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\bin\Debug\netcoreapp3.1\Holidayview.Infrastructure.runtimeconfig.dev.json
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Infrastructure\obj\Debug\netcoreapp3.1\Holidayview.Infrastructure.genruntimeconfig.cache
