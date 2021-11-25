@@ -10,7 +10,7 @@ namespace Holidayview.Application.ViewModels.Customer
         public int Id { get; set; }
         public string CustomerFullName { get; set; }
         public string Email { get; set; }
-        public List<LeaveBalanceForListVm> LeaveBalances { get; set; }
+        public List<LeaveBalance> LeaveBalances { get; set; }
         public string Company { get; set; }
         public string DirectorFullName { get; set; }
         public string ManagerFullName { get; set; }

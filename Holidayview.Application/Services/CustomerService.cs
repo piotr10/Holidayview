@@ -126,10 +126,10 @@ namespace Holidayview.Application.Services
             var customer = _customerRepo.GetCustomer(customerId);
             
             var customerLeaveBalanceVm = new CustomerDetailsVm();
-            customerLeaveBalanceVm.LeaveBalances = new List<LeaveBalanceForListVm>();
+            customerLeaveBalanceVm.LeaveBalances = new List<LeaveBalance>();
             foreach (var leaveBalance in customer.LeaveBalances)
             {
-                var add = new LeaveBalanceForListVm()
+                var add = new LeaveBalance()
                 {
                     Id = leaveBalance.Id,
                     BalanceOfLeave = leaveBalance.BalanceOfLeave,

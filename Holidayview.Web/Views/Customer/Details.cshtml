@@ -66,6 +66,28 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Vacation)
         </dd>
+
+        @foreach (var lista in Model.LeaveBalances)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => lista.BalanceOfLeave)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => lista.BalanceOfLeave)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => lista.LeaveLeft)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => lista.LeaveLeft)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => lista.LeaveTaken)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => lista.LeaveTaken)
+            </dd>
+        }
     </dl>
 </div>
 <div>
