@@ -35,7 +35,9 @@ namespace Holidayview.Application.ViewModels.Customer
                     opt => opt.MapFrom(d => d.Disable.Name))
                 .ForMember(s => s.Vacation,
                     opt => opt.MapFrom(d => d.Vacation.LeaveDimension))
-                .ForMember(s => s.LeaveBalances, opt => opt.Ignore());
+                .ForMember(s => s.LeaveBalances,
+                    opt => opt.MapFrom(d => d.LeaveBalances));
+                //.ForMember(s => s.LeaveBalances, opt => opt.Ignore());
 
             /* profile.CreateMap<Holidayview.Domain.Model.LeaveBalance, CustomerDetailsVm>()
                  .ForMember(s => s.LeaveBalances, opt => opt.MapFrom(d => d.BalanceOfLeave))

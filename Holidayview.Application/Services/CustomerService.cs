@@ -124,7 +124,7 @@ namespace Holidayview.Application.Services
         public CustomerDetailsVm GetCustomerDetails(int? customerId)
         {
             var customer = _customerRepo.GetCustomer(customerId);
-            /*
+            
             var customerLeaveBalanceVm = new CustomerDetailsVm();
             customerLeaveBalanceVm.LeaveBalances = new List<LeaveBalanceForListVm>();
             foreach (var leaveBalance in customer.LeaveBalances)
@@ -138,7 +138,7 @@ namespace Holidayview.Application.Services
                 };
                 customerLeaveBalanceVm.LeaveBalances.Add(add);
             }
-            */
+            
             var customerVm = _mapper.Map<CustomerDetailsVm>(customer);            
 
             return customerVm;
