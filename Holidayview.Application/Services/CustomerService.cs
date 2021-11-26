@@ -139,8 +139,7 @@ namespace Holidayview.Application.Services
                 customerLeaveBalanceVm.LeaveBalances.Add(add);
             }
             
-            var customerVm = _mapper.Map<CustomerDetailsVm>(customer);            
-
+            var customerVm = _mapper.Map<CustomerDetailsVm>(customer);
             return customerVm;
         }
 

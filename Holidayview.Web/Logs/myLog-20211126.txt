@@ -1,0 +1,5 @@
+2021-11-26T17:47:18.4577655+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-11-26T17:47:18.4650354+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-11-26T17:47:18.4664197+01:00  [INF] Content root path: "D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web" (b5d60022)
+2021-11-26T17:47:18.6186397+01:00 80000015-0003-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)
+2021-11-26T17:47:21.0973843+01:00 80000017-0003-fd00-b63f-84710c7967bb [INF] Jestem w Home/Index (38940ad7)

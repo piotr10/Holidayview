@@ -47,6 +47,8 @@ namespace Holidayview.Web.Controllers
              */
             //String timeStamp = GetTimestamp(DateTime.Now);
 
+            _logger.LogInformation("Jestem w Home/Index");
+
             return View();
         }
 
