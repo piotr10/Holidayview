@@ -1,4 +1,6 @@
-﻿namespace Holidayview.Domain.Model
+﻿using System.Linq;
+
+namespace Holidayview.Domain.Model
 {
     public class LeaveBalance
     {

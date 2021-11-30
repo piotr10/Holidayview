@@ -29,6 +29,12 @@ namespace Holidayview.Application.Services
             return id;
         }
 
+        public void AddLeaveBalance(LeaveBalance leaveBalance)
+        {
+            var balance = _mapper.Map<LeaveBalance>(leaveBalance);
+            _customerRepo.AddLeaveBalance(balance);
+        }
+
         public void DeleteCustomer(int id)
         {            
             _customerRepo.DeleteCustomer(id);

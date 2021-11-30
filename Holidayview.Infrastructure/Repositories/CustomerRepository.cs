@@ -25,6 +25,11 @@ namespace Holidayview.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             return customer.Id;
         }
+        public void AddLeaveBalance(LeaveBalance balance)
+        {
+            _context.LeaveBalances.Add(balance);
+            _context.SaveChanges();
+        }
 
         //Usuwamy klienta 
         public void DeleteCustomer(int customerId)

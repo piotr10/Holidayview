@@ -18,7 +18,7 @@ namespace Holidayview.Application.ViewModels.Customer
         public string Disable { get; set; }
         public string Vacation { get; set; }
 
-        public void Mappicdng(Profile profile)
+        public void Mapping(Profile profile)
         {
             profile.CreateMap<Holidayview.Domain.Model.Customer, CustomerDetailsVm>()
                 .ForMember(s => s.CustomerFullName,

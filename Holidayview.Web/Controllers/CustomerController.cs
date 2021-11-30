@@ -9,6 +9,7 @@ using Holidayview.Application.Services;
 using Holidayview.Application.ViewModels.Customer;
 using Holidayview.Domain.Model;
 using Holidayview.Infrastructure;
+using Holidayview.Web.Helpers.CustomerHelper;
 using Holidayview.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -76,8 +77,14 @@ namespace Holidayview.Web.Controllers
                 ViewData["DisableId"] = new SelectList(_context.Disables, "Id", "Name", model.DisableId);
                 ViewData["VacationId"] = new SelectList(_context.Vacations, "Id", "LeaveDimension", model.VacationId);
                 #endregion
+
+                List<Vacation> vacation = new List<Vacation>();
+                AddBalanceOfLeave balanceOfLeave = new AddBalanceOfLeave(_context, _customerService);
                 model.IsActive = true;
+
                 var id = await _customerService.AddCustomer(model);
+                balanceOfLeave.AddNewBalanceOfLeave(model, vacation, id);
+
                 return RedirectToAction("Index");
             }
             catch
@@ -137,7 +144,7 @@ namespace Holidayview.Web.Controllers
                
         public IActionResult Details(int? id)
         {
-            if (id == null)
+            if (id != null)
             {   
                 var customerModelFirstCustomer = _customerService.GetCustomerDetails(id);
                 return View(customerModelFirstCustomer);
