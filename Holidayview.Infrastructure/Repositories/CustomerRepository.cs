@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Holidayview.Domain.Interfaces;
@@ -113,9 +114,12 @@ namespace Holidayview.Infrastructure.Repositories
             .Include(x => x.LeaveBalances)
             .FirstOrDefault(x => x.Id == customerId);
         }
+        
 
         public void UpdateCustomer(Customer customer)
         {
+            
+
             _context.Attach(customer);
             #region IsModified = true
             _context.Entry(customer).Property("Id").IsModified = false;
@@ -130,9 +134,24 @@ namespace Holidayview.Infrastructure.Repositories
             _context.Entry(customer).Property("LeaderId").IsModified = true;
             _context.Entry(customer).Property("DisableId").IsModified = true;
             _context.Entry(customer).Property("VacationId").IsModified = true;
+
+            customer.LeaveBalances.Each(type => _context.Entry(type).State = EntityState.Modified);
+
+            
+            
+            
+            
+            /*
+            _context.Entry(customer).Property("LeaveBalances.Id").IsModified = true;
+            _context.Entry(customer).Property("LeaveBalances.BalanceOfLeave").IsModified = true;
+            _context.Entry(customer).Property("LeaveBalances.LeaveLeft").IsModified = true;
+            _context.Entry(customer).Property("LeaveBalances.LeaveTaken").IsModified = true;
+            _context.Entry(customer).Property("LeaveBalances.CustomerId").IsModified = true;
+            */
             #endregion
 
             _context.SaveChanges();
         }
+        
     }
 }

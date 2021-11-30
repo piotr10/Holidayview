@@ -68,6 +68,24 @@
                 <select asp-for="VacationId" class="form-control" asp-items="@ViewBag.VacationId"></select>
                 <span asp-validation-for="VacationId" class="text-danger"></span>
             </div>
+            @foreach (var item in Model.LeaveBalances)
+            {
+                <div class="form-group">
+                    <label asp-for="@item.BalanceOfLeave" class="control-label"></label>
+                    <input asp-for="@item.BalanceOfLeave" class="form-control"/>
+                    <span asp-validation-for="@item.BalanceOfLeave" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.LeaveTaken" class="control-label"></label>
+                    <input asp-for="@item.LeaveTaken" class="form-control"/>
+                    <span asp-validation-for="@item.LeaveTaken" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@item.LeaveLeft" class="control-label"></label>
+                    <input asp-for="@item.LeaveLeft" class="form-control"/>
+                    <span asp-validation-for="@item.LeaveLeft" class="text-danger"></span>
+                </div>
+            }
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

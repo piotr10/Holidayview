@@ -12,6 +12,7 @@ using Holidayview.Infrastructure;
 using Holidayview.Web.Helpers.CustomerHelper;
 using Holidayview.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Holidayview.Web.Controllers
 {
@@ -110,7 +111,7 @@ namespace Holidayview.Web.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, NewCustomerVm model)
+        public IActionResult Edit(int id, NewCustomerVm model, List<LeaveBalance> balanceEdit)
         {
             #region Dropdownlist
             ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name", model.CompanyId);
@@ -129,6 +130,35 @@ namespace Holidayview.Web.Controllers
 
             if (ModelState.IsValid)
             {
+                var balance = (from bal in _context.LeaveBalances
+                    select bal).ToList();
+                var leave = (from lea in _context.Customers
+                    select lea).ToList();
+
+                var idEdit = leave.Where(x => x.Id == id).ToList();
+                var idBalanceOfLeave = idEdit.Where(x => x.Id == id).Select(x => x.LeaveBalances).ToList();
+
+
+                foreach (var idBalance in idBalanceOfLeave)
+                {
+                    var editBalanceOfLeave = idBalance.Where(x => x.CustomerId == id).Select(x=>x.BalanceOfLeave);
+                    var editLeaveTaken = idBalance.Where(x => x.CustomerId == id).Select(x=>x.LeaveTaken);
+                    var editLeaveLeft = idBalance.Where(x => x.CustomerId == id).Select(x=>x.LeaveLeft);
+                    var editCustomerId = idBalance.Where(x => x.CustomerId == id).Select(x=>x.CustomerId);
+                    var editId = idBalance.Where(x => x.CustomerId == id).Select(x=>x.Id);
+
+                    model.LeaveBalances = new List<LeaveBalance>() { };
+
+                    model.LeaveBalances.Add(new LeaveBalance()
+                    {
+                        BalanceOfLeave = editBalanceOfLeave.FirstOrDefault(),
+                        LeaveTaken = editLeaveTaken.FirstOrDefault(),
+                        LeaveLeft = editLeaveLeft.FirstOrDefault(),
+                        CustomerId = editCustomerId.FirstOrDefault(),
+                        Id = editId.FirstOrDefault()
+                    });
+                }
+
                 _customerService.UpdateCustomer(model);
                 TempData["editsavechanges"] = "Save changes";
             }
