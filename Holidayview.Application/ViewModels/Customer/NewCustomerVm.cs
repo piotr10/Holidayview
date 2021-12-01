@@ -2,6 +2,7 @@
 using Holidayview.Application.Mapping;
 using Holidayview.Domain.Model;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Holidayview.Application.ViewModels.Customer
 {
@@ -10,15 +11,23 @@ namespace Holidayview.Application.ViewModels.Customer
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        [DisplayName("Individual ID")]
         public int IndividualId { get; set; }
         public bool IsActive { get; set; }
         public string Email { get; set; }
+        [DisplayName("Company")]
         public int CompanyId { get; set; }
+        [DisplayName("Director")]
         public int DirectorId { get; set; }
+        [DisplayName("Manager")]
         public int ManagerId { get; set; }
+        [DisplayName("Leader")]
         public int LeaderId { get; set; }
+        [DisplayName("Disable")]
         public int DisableId { get; set; }
+        [DisplayName("Vacation")]
         public int VacationId { get; set; }
+        //public List<Vacation> Vacations { get; set; }
         public ICollection<LeaveBalance> LeaveBalances { get; set; }
         public void Mapping(Profile profile)
         {
