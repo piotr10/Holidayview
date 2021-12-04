@@ -1561,6 +1561,9 @@
       "Holidayview.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9"
+        },
         "compile": {
           "bin/placeholder/Holidayview.Domain.dll": {}
         },
@@ -5888,19 +5891,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\olasa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SzkolaDotNetHolidayview\\Holidayview\\Holidayview.Infrastructure\\Holidayview.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\olasa\\Source\\Repos\\Holidayview\\Holidayview.Infrastructure\\Holidayview.Infrastructure.csproj",
       "projectName": "Holidayview.Infrastructure",
-      "projectPath": "D:\\SzkolaDotNetHolidayview\\Holidayview\\Holidayview.Infrastructure\\Holidayview.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\SzkolaDotNetHolidayview\\Holidayview\\Holidayview.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\olasa\\Source\\Repos\\Holidayview\\Holidayview.Infrastructure\\Holidayview.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\olasa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\olasa\\Source\\Repos\\Holidayview\\Holidayview.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\olasa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5912,10 +5915,9 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\SzkolaDotNetHolidayview\\Holidayview\\Holidayview.Domain\\Holidayview.Domain.csproj": {
-              "projectPath": "D:\\SzkolaDotNetHolidayview\\Holidayview\\Holidayview.Domain\\Holidayview.Domain.csproj"
+            "C:\\Users\\olasa\\Source\\Repos\\Holidayview\\Holidayview.Domain\\Holidayview.Domain.csproj": {
+              "projectPath": "C:\\Users\\olasa\\Source\\Repos\\Holidayview\\Holidayview.Domain\\Holidayview.Domain.csproj"
             }
           }
         }
@@ -5928,7 +5930,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -5964,7 +5965,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

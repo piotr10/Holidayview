@@ -1,0 +1,99 @@
+﻿@model Holidayview.Application.ViewModels.UserVm.ListUsersForListVm
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Użytkownicy</h1>
+<div class="divRadius table-responsive">
+    <table class="table table-bordered table-striped" id="table" width="100%">
+        <thead class=" thead-dark">
+            <tr>
+                <th style="text-align :center">
+                    Nazwa użytkownika
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Users)
+            {
+<tr>
+    <td style="text-align:center">
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    <td style="text-align:center">
+        <a class="btn btn-danger btn-sm" href="javascript:DeleteUser('@item.Id','@item.UserName')">Usuń użytkownika</a>
+        <a class="btn btn-info btn-sm" href="javascript:SetRoles('@item.Id')">Edytuj prawa</a>
+    </td>
+</tr>
+       }
+        </tbody>
+    </table>
+    <button id="DeleteRoles" style="display:none" type="button" class="btn btn-danger" onclick="ClearRoles()">Zamknij formularz</button>
+
+    <div id="Roles">
+
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable({
+                "scrollX": true,
+                responsive: true,
+                "pagingType": "full_numbers",
+                "language": {
+                    "lengthMenu": "Pokaż _MENU_ użytkowników na stronie",
+                    "zeroRecords": "Brak pasujących użytkowników",
+                    "info": "Strona _PAGE_ z _PAGES_",
+                    "infoEmpty": "Brak użytkowników w bazie",
+                    "infoFiltered": "(przeszukano z _MAX_ liczby rekordów)",
+                    "search": "Wyszukaj: ",
+                    "paginate": {
+                        "first": "Pierwsza",
+                        "last": "Ostatnia",
+                        "next": "Następna",
+                        "previous": "Poprzednia"
+                    },
+
+                },
+                "columns": [
+                    null,
+                    { "orderable": false }
+                ]
+            });
+        });
+
+        function ClearRoles() {
+            $('#Roles').empty();
+            $('#DeleteRoles').hide();
+        }
+
+        function DeleteUser(id, name) {
+            if (confirm('Czy na pewno chcesz usunąć użytkownika ' + name + '?')) {
+                $.ajax({
+                url: '@Url.Action("DeleteUser", "UserRoles")',
+                type: 'POST',
+                data: { id: id },
+                success: function(result) {
+                    location.reload();
+                }
+                });
+            }
+        }
+
+        function SetRoles(id) {
+            var $divRoles = $('#Roles');
+             $divRoles.empty();
+             var url = '@Url.Action("AddRolesToUser","UserRoles")?id=' + id;
+            $divRoles.load(url);
+            $('#DeleteRoles').show();
+        }
+    </script>
+}

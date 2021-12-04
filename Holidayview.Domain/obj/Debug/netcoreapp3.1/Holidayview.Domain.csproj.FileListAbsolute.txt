@@ -8,3 +8,12 @@ D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.csproj.CoreCompileInputs.cache
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.pdb
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\bin\Debug\netcoreapp3.1\Holidayview.Domain.deps.json
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\bin\Debug\netcoreapp3.1\Holidayview.Domain.dll
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\bin\Debug\netcoreapp3.1\Holidayview.Domain.pdb
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.csprojAssemblyReference.cache
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.AssemblyInfoInputs.cache
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.AssemblyInfo.cs
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.dll
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.pdb
+C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Domain\obj\Debug\netcoreapp3.1\Holidayview.Domain.csproj.CoreCompileInputs.cache

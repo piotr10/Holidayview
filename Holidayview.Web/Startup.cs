@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DelegationsMVC.Application.Services;
 using Holidayview.Application;
 using Holidayview.Domain.Interfaces;
 using Holidayview.Infrastructure;
@@ -34,16 +35,25 @@ namespace Holidayview.Web
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<Context>();
 
-            services.AddTransient<Context>();
-
+          
             services.AddApplication(); //We must add this line for dependency injection Services
             services.AddInfrastructure(); //We must add this line for dependency injection Repositorys
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.Configure<IdentityOptions>(opt =>
+            {
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequiredLength = 8;
+
+                opt.SignIn.RequireConfirmedEmail = false;
+                opt.User.RequireUniqueEmail = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

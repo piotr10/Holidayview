@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9F1896E1-3607-417A-911D-A07EAFAAB47C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holidayview.Application", "Holidayview.Application\Holidayview.Application.csproj", "{F86DD606-1E11-44A3-B109-6D17D545330A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidayview.Application", "Holidayview.Application\Holidayview.Application.csproj", "{F86DD606-1E11-44A3-B109-6D17D545330A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holidayview.Domain", "Holidayview.Domain\Holidayview.Domain.csproj", "{D1820BC5-F0C3-4E3E-ACAF-55E96532EF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidayview.Domain", "Holidayview.Domain\Holidayview.Domain.csproj", "{D1820BC5-F0C3-4E3E-ACAF-55E96532EF81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holidayview.Infrastructure", "Holidayview.Infrastructure\Holidayview.Infrastructure.csproj", "{4AC42255-AAEA-48A6-8B28-3093C29F243E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidayview.Infrastructure", "Holidayview.Infrastructure\Holidayview.Infrastructure.csproj", "{4AC42255-AAEA-48A6-8B28-3093C29F243E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3782B6D6-78AF-4EED-8FE6-E7B977315580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holidayview.Test", "Holidayview.Test\Holidayview.Test.csproj", "{CA2BF27A-742A-4517-B5F9-54C4675C43DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidayview.Test", "Holidayview.Test\Holidayview.Test.csproj", "{CA2BF27A-742A-4517-B5F9-54C4675C43DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
