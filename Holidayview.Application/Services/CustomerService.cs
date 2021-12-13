@@ -161,5 +161,17 @@ namespace Holidayview.Application.Services
             var customer = _mapper.Map<Customer>(model);
             _customerRepo.UpdateCustomer(customer);
         }
+
+        public NewCustomerVm SetParametersToVm(NewCustomerVm model)
+        {
+            model.CustomerTypes = GetCustomerTypes().ToList();
+            return model;
+        }
+
+        public IQueryable<CustomerTypeVm> GetCustomerTypes()
+        {
+            var empTypesVm = _customerRepo.GetEmployeeTypes().ProjectTo<CustomerTypeVm>(_mapper.ConfigurationProvider);
+            return empTypesVm;
+        }
     }
 }

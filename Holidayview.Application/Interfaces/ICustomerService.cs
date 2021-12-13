@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Holidayview.Application.ViewModels.Customer;
 using Holidayview.Domain.Model;
@@ -14,5 +15,8 @@ namespace Holidayview.Application.Interfaces
         NewCustomerVm GetCustomerForEdit(int id);
         void UpdateCustomer(NewCustomerVm model);
         void DeleteCustomer(int id);
+
+        NewCustomerVm SetParametersToVm(NewCustomerVm model);
+        IQueryable<CustomerTypeVm> GetCustomerTypes();
     }
 }

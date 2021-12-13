@@ -32,6 +32,23 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Best Performance"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Clermont"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Customer", b =>
@@ -42,6 +59,9 @@ namespace Holidayview.Infrastructure.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerTypeId")
                         .HasColumnType("int");
 
                     b.Property<int>("DirectorId")
@@ -78,6 +98,8 @@ namespace Holidayview.Infrastructure.Migrations
 
                     b.HasIndex("CompanyId");
 
+                    b.HasIndex("CustomerTypeId");
+
                     b.HasIndex("DirectorId");
 
                     b.HasIndex("DisableId");
@@ -89,6 +111,56 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasIndex("VacationId");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CompanyId = 1,
+                            CustomerTypeId = 1,
+                            DirectorId = 1,
+                            DisableId = 1,
+                            Email = "YES",
+                            IndividualId = 1,
+                            IsActive = true,
+                            LeaderId = 1,
+                            ManagerId = 1,
+                            Name = "None",
+                            Surname = "YES",
+                            VacationId = 1
+                        });
+                });
+
+            modelBuilder.Entity("Holidayview.Domain.Model.CustomerType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Director"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Manager"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Leader"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Director", b =>
@@ -107,6 +179,18 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Directors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "John"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Disable", b =>
@@ -122,6 +206,23 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Disables");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "YES"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "NO"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Leader", b =>
@@ -140,6 +241,18 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Leaders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Bill"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.LeaveBalance", b =>
@@ -166,6 +279,16 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("LeaveBalances");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BalanceOfLeave = 26.0,
+                            CustomerId = 1,
+                            LeaveLeft = 26.0,
+                            LeaveTaken = 0.0
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Manager", b =>
@@ -184,6 +307,18 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Managers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Mark"
+                        });
                 });
 
             modelBuilder.Entity("Holidayview.Domain.Model.Vacation", b =>
@@ -199,6 +334,28 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vacations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            LeaveDimension = 20.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            LeaveDimension = 26.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            LeaveDimension = 30.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            LeaveDimension = 36.0
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -406,6 +563,12 @@ namespace Holidayview.Infrastructure.Migrations
                     b.HasOne("Holidayview.Domain.Model.Company", "Company")
                         .WithMany("Customers")
                         .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Holidayview.Domain.Model.CustomerType", "CustomerType")
+                        .WithMany("Customers")
+                        .HasForeignKey("CustomerTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

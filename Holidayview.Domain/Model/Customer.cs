@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Holidayview.Domain.Model
 {
@@ -9,6 +10,10 @@ namespace Holidayview.Domain.Model
         public string Surname { get; set; }
         public int IndividualId { get; set; }
         public bool IsActive { get; set; }
+
+        //Customer types e.g. manager / TL / director
+        public int CustomerTypeId { get; set; }
+        public virtual CustomerType CustomerType { get; set; }
 
         //Leave balance - Bilans urlopowy
         public virtual ICollection<LeaveBalance> LeaveBalances { get; set; }

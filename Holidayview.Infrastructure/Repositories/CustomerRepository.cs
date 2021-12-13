@@ -31,7 +31,7 @@ namespace Holidayview.Infrastructure.Repositories
             _context.LeaveBalances.Add(balance);
             _context.SaveChanges();
         }
-
+        
         //Usuwamy klienta 
         public void DeleteCustomer(int customerId)
         {
@@ -118,8 +118,6 @@ namespace Holidayview.Infrastructure.Repositories
 
         public void UpdateCustomer(Customer customer)
         {
-            
-
             _context.Attach(customer);
             #region IsModified = true
             _context.Entry(customer).Property("Id").IsModified = false;
@@ -137,10 +135,6 @@ namespace Holidayview.Infrastructure.Repositories
 
             customer.LeaveBalances.Each(type => _context.Entry(type).State = EntityState.Modified);
 
-            
-            
-            
-            
             /*
             _context.Entry(customer).Property("LeaveBalances.Id").IsModified = true;
             _context.Entry(customer).Property("LeaveBalances.BalanceOfLeave").IsModified = true;
@@ -152,6 +146,10 @@ namespace Holidayview.Infrastructure.Repositories
 
             _context.SaveChanges();
         }
-        
+        public IQueryable<CustomerType> GetEmployeeTypes()
+        {
+            var empTypes = _context.CustomerTypes.AsNoTracking();
+            return empTypes;
+        }
     }
 }

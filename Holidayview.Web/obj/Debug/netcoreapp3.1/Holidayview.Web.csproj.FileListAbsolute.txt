@@ -678,7 +678,6 @@ D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\M
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
@@ -1294,3 +1293,10 @@ C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\
 C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\olasa\Source\Repos\Holidayview\Holidayview.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Views\UserRoles\AddRolesToUser.cshtml.g.cs
+D:\SzkolaDotNetHolidayview\Holidayview\Holidayview.Web\obj\Debug\netcoreapp3.1\Razor\Views\UserRoles\Index.cshtml.g.cs

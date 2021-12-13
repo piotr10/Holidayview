@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Holidayview.Application.Interfaces;
 using Holidayview.Application.Services;
@@ -50,18 +51,22 @@ namespace Holidayview.Web.Controllers
             var model = _customerService.GetAllCustomersForList(pageSize, pageNo.Value, searchString);
             return View(model);
         }
-                
+
         public IActionResult AddCustomer()
         {
             #region Dropdownlist
             ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name");
-            ViewData["DirectorId"] = new SelectList(_context.Directors, "Id", "Name");
-            ViewData["ManagerId"] = new SelectList(_context.Managers, "Id", "Name");
-            ViewData["LeaderId"] = new SelectList(_context.Leaders, "Id", "Name");
+            ViewData["DirectorId"] = new SelectList(_context.Directors, "Id", "Name", "Surname");
+            ViewData["ManagerId"] = new SelectList(_context.Managers, "Id", "Name", "Surname");
+            ViewData["LeaderId"] = new SelectList(_context.Leaders, "Id", "Name", "Surname");
             ViewData["DisableId"] = new SelectList(_context.Disables, "Id", "Name");
             ViewData["VacationId"] = new SelectList(_context.Vacations, "Id", "LeaveDimension");
             #endregion
-            return View(new NewCustomerVm());
+
+            var model = new NewCustomerVm();
+
+            _customerService.SetParametersToVm(model);
+            return View(model);
         }
        
         [HttpPost]
