@@ -146,10 +146,16 @@ namespace Holidayview.Infrastructure.Repositories
 
             _context.SaveChanges();
         }
-        public IQueryable<CustomerType> GetEmployeeTypes()
+        public IQueryable<CustomerType> GetCustomerTypes()
         {
-            var empTypes = _context.CustomerTypes.AsNoTracking();
-            return empTypes;
+            var cusTypes = _context.CustomerTypes.AsNoTracking();
+            return cusTypes;
+        }
+
+        public IQueryable<CustomerWithSupervisor> GetCustomerWithSupervisors()
+        {
+            var cusTypes = _context.CustomerWithSupervisors.AsNoTracking();
+            return cusTypes;
         }
     }
 }

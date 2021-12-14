@@ -165,13 +165,20 @@ namespace Holidayview.Application.Services
         public NewCustomerVm SetParametersToVm(NewCustomerVm model)
         {
             model.CustomerTypes = GetCustomerTypes().ToList();
+            model.CustomerWithSupervisors = GetCustomerWithSupervisors().ToList();
             return model;
         }
 
         public IQueryable<CustomerTypeVm> GetCustomerTypes()
         {
-            var empTypesVm = _customerRepo.GetEmployeeTypes().ProjectTo<CustomerTypeVm>(_mapper.ConfigurationProvider);
-            return empTypesVm;
+            var cusTypesVm = _customerRepo.GetCustomerTypes().ProjectTo<CustomerTypeVm>(_mapper.ConfigurationProvider);
+            return cusTypesVm;
+        }
+
+        public IQueryable<CustomerWithSupervisorVm> GetCustomerWithSupervisors()
+        {
+            var cusTypesVm = _customerRepo.GetCustomerWithSupervisors().ProjectTo<CustomerWithSupervisorVm>(_mapper.ConfigurationProvider);
+            return cusTypesVm;
         }
     }
 }

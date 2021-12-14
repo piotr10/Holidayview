@@ -15,6 +15,7 @@ namespace Holidayview.Domain.Interfaces
         Customer GetCustomer(int? customerId);
         void UpdateCustomer(Customer customer);
         void AddLeaveBalance(LeaveBalance balance);
-        IQueryable<CustomerType> GetEmployeeTypes();
+        IQueryable<CustomerType> GetCustomerTypes();
+        IQueryable<CustomerWithSupervisor> GetCustomerWithSupervisors();
     }
 }

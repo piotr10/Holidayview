@@ -17,6 +17,8 @@ namespace Holidayview.Application.ViewModels.Customer
         public string Email { get; set; }
         [DisplayName("Position")]
         public int CustomerTypeId { get; set; }
+        [DisplayName("Supervisor")]
+        public int CustomerWithSupervisorId { get; set; }
         [DisplayName("Company")]
         public int CompanyId { get; set; }
         [DisplayName("Director")]
@@ -31,6 +33,7 @@ namespace Holidayview.Application.ViewModels.Customer
         public int VacationId { get; set; }
         //public List<Vacation> Vacations { get; set; }
         public List<CustomerTypeVm> CustomerTypes { get; set; }
+        public List<CustomerWithSupervisorVm> CustomerWithSupervisors { get; set; }
         public ICollection<LeaveBalance> LeaveBalances { get; set; }
         public void Mapping(Profile profile)
         {

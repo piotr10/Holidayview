@@ -18,6 +18,7 @@ namespace Holidayview.Infrastructure
         public DbSet<Vacation> Vacations { get; set; }
         public DbSet<LeaveBalance> LeaveBalances { get; set; }
         public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<CustomerWithSupervisor> CustomerWithSupervisors { get; set; }
 
         public Context(DbContextOptions options) : base(options)
         {

@@ -15,6 +15,10 @@ namespace Holidayview.Domain.Model
         public int CustomerTypeId { get; set; }
         public virtual CustomerType CustomerType { get; set; }
 
+        //Customers with supervisors to choice
+        public int CustomerWithSupervisorId { get; set; }
+        public virtual CustomerWithSupervisor CustomerWithSupervisor { get; set; }
+
         //Leave balance - Bilans urlopowy
         public virtual ICollection<LeaveBalance> LeaveBalances { get; set; }
 

@@ -18,5 +18,6 @@ namespace Holidayview.Application.Interfaces
 
         NewCustomerVm SetParametersToVm(NewCustomerVm model);
         IQueryable<CustomerTypeVm> GetCustomerTypes();
+        IQueryable<CustomerWithSupervisorVm> GetCustomerWithSupervisors();
     }
 }
