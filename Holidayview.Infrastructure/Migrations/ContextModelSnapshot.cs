@@ -120,13 +120,13 @@ namespace Holidayview.Infrastructure.Migrations
                             CustomerTypeId = 1,
                             DirectorId = 1,
                             DisableId = 1,
-                            Email = "YES",
+                            Email = "admin@gmail.com",
                             IndividualId = 1,
                             IsActive = true,
                             LeaderId = 1,
                             ManagerId = 1,
-                            Name = "None",
-                            Surname = "YES",
+                            Name = "admin",
+                            Surname = "admin",
                             VacationId = 1
                         });
                 });
@@ -184,12 +184,14 @@ namespace Holidayview.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "None"
+                            Name = "None",
+                            Surname = "None"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "John"
+                            Name = "John",
+                            Surname = "Wick"
                         });
                 });
 
@@ -246,12 +248,14 @@ namespace Holidayview.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "None"
+                            Name = "None",
+                            Surname = "None"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Bill"
+                            Name = "Bill",
+                            Surname = "Murray"
                         });
                 });
 
@@ -312,12 +316,14 @@ namespace Holidayview.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "None"
+                            Name = "None",
+                            Surname = "None"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Mark"
+                            Name = "Mark",
+                            Surname = "Wahlberg"
                         });
                 });
 
