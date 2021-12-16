@@ -71,7 +71,6 @@ namespace Holidayview.Infrastructure
                     Surname = "admin",
                     IndividualId = 1,
                     Email = "admin@gmail.com",
-                    CustomerTypeId = 1,
                     DirectorId = 1,
                     ManagerId = 1,
                     LeaderId = 1,
@@ -79,6 +78,17 @@ namespace Holidayview.Infrastructure
                     CompanyId = 1,
                     DisableId = 1,
                     VacationId = 1
+                });
+
+            builder.Entity<CustomerWithSupervisor>()
+                .HasData(new CustomerWithSupervisor
+                {
+                    Id = 1,
+                    Leader = "None",
+                    Manager = "None",
+                    Director = "None",
+                    CustomerTypeId = 1,
+                    CustomerId = 1
                 });
 
             builder.Entity<LeaveBalance>()

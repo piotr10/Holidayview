@@ -151,7 +151,7 @@ namespace Holidayview.Infrastructure.Repositories
             var cusTypes = _context.CustomerTypes.AsNoTracking();
             return cusTypes;
         }
-
+        
         public IQueryable<CustomerWithSupervisor> GetCustomerWithSupervisors()
         {
             var cusTypes = _context.CustomerWithSupervisors.AsNoTracking();

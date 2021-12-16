@@ -4,7 +4,7 @@ using Holidayview.Domain.Model;
 
 namespace Holidayview.Application.ViewModels.Customer
 {
-    public class CustomerWithSupervisorVm : IMapFrom<CustomerType>
+    public class CustomerWithSupervisorVm : IMapFrom<CustomerWithSupervisor>
     {
         public int Id { get; set; }
         public string Leader { get; set; }

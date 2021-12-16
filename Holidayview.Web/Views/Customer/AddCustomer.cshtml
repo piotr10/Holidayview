@@ -1,4 +1,5 @@
-﻿@model Holidayview.Application.ViewModels.Customer.NewCustomerVm
+﻿@using System.Linq
+@model Holidayview.Application.ViewModels.Customer.NewCustomerVm
 
 @{
     ViewData["Title"] = "AddCustomer";
@@ -93,6 +94,27 @@
             </div>
         </div>
     </div>
+
+    <div class="divRadius">
+        <div class="form-row">
+            <h3>Company information V2</h3>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label asp-for="CustomerWithSupervisors[0].Leader" class="control-label">Leader full name</label>
+                <select asp-for="CustomerWithSupervisors[0].Leader" asp-items="@(new SelectList(Model.CustomerWithSupervisors, "Id", "Leader"))" class="custom-select"></select>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CustomerWithSupervisors[0].Manager" class="control-label">Manager full name</label>
+                <select asp-for="CustomerWithSupervisors[0].Manager" asp-items="@(new SelectList(Model.CustomerWithSupervisors, "Id", "Manager"))" class="custom-select"></select>
+            </div>
+            <div class="form-group col">
+                <label asp-for="CustomerWithSupervisors[0].Director" class="control-label">Director full name</label>
+                <select asp-for="CustomerWithSupervisors[0].Director" asp-items="@(new SelectList(Model.CustomerWithSupervisors, "Id", "Director"))" class="custom-select"></select>
+            </div>
+        </div>
+    </div>
+
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success" />
     </div>

@@ -87,7 +87,7 @@ namespace Holidayview.Web.Controllers
                 List<Vacation> vacation = new List<Vacation>();
                 AddBalanceOfLeave balanceOfLeave = new AddBalanceOfLeave(_context, _customerService);
                 model.IsActive = true;
-
+                model.CustomerWithSupervisors = _customerService.CheckCustomerWithSupervisorList(model.CustomerWithSupervisors);
                 var id = await _customerService.AddCustomer(model);
                 balanceOfLeave.AddNewBalanceOfLeave(model, vacation, id);
 

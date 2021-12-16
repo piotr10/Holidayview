@@ -175,6 +175,20 @@ namespace Holidayview.Application.Services
             return cusTypesVm;
         }
 
+        public List<NewCustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<NewCustomerWithSupervisorVm> newSupervisor)
+        {
+            var supervisor = new List<NewCustomerWithSupervisorVm>();
+            supervisor = newSupervisor.Where(c => c.Leader != null).ToList();
+            return supervisor;
+        }
+
+        public List<CustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<CustomerWithSupervisorVm> customerWithSupervisors)
+        {
+            var supervisor = new List<CustomerWithSupervisorVm>();
+            supervisor = customerWithSupervisors.Where(c => c.Leader != null).ToList();
+            return supervisor;
+        }
+
         public IQueryable<CustomerWithSupervisorVm> GetCustomerWithSupervisors()
         {
             var cusTypesVm = _customerRepo.GetCustomerWithSupervisors().ProjectTo<CustomerWithSupervisorVm>(_mapper.ConfigurationProvider);

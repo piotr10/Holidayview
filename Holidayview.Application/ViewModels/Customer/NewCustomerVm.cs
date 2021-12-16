@@ -37,7 +37,7 @@ namespace Holidayview.Application.ViewModels.Customer
         public ICollection<LeaveBalance> LeaveBalances { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Application.ViewModels.Customer.NewCustomerVm, Domain.Model.Customer>().ReverseMap();              
+            profile.CreateMap<Application.ViewModels.Customer.NewCustomerVm, Domain.Model.Customer>().ReverseMap();
         }
     }
 }
