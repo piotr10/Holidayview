@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Holidayview.Application.Interfaces;
-using Holidayview.Application.ViewModels.Customer;
+using Holidayview.Application.ViewModels.CustomerVm;
 using Holidayview.Domain.Interfaces;
 using Holidayview.Domain.Model;
 
@@ -22,7 +22,7 @@ namespace Holidayview.Application.Services
             _mapper = mapper;
         }
 
-        public Task<int> AddCustomer(NewCustomerVm customer)
+        public int AddCustomer(NewCustomerVm customer)
         {
             var cust = _mapper.Map<Customer>(customer);
             var id = _customerRepo.AddCustomer(cust);
@@ -168,30 +168,29 @@ namespace Holidayview.Application.Services
             model.CustomerWithSupervisors = GetCustomerWithSupervisors().ToList();
             return model;
         }
+        public List<CustomerTypeVm> CheckCustomerTypeList(List<CustomerTypeVm> customerTypes)
+        {
+            var cusTypesVm = new List<CustomerTypeVm>();
+            cusTypesVm = customerTypes.Where(x => x.Name != null).ToList();
+            return cusTypesVm;
+        }
 
-        public IQueryable<CustomerTypeVm> GetCustomerTypes()
+        public IQueryable<CustomerTypeVm> GetCustomerTypes() //powinna zaciągnąć się lista ze stanowiskami Director / Manager / Leader
         {
             var cusTypesVm = _customerRepo.GetCustomerTypes().ProjectTo<CustomerTypeVm>(_mapper.ConfigurationProvider);
             return cusTypesVm;
         }
-
-        public List<NewCustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<NewCustomerWithSupervisorVm> newSupervisor)
+        
+        public List<NewCustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<NewCustomerWithSupervisorVm> customerWithSupervisors)
         {
             var supervisor = new List<NewCustomerWithSupervisorVm>();
-            supervisor = newSupervisor.Where(c => c.Leader != null).ToList();
-            return supervisor;
-        }
-
-        public List<CustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<CustomerWithSupervisorVm> customerWithSupervisors)
-        {
-            var supervisor = new List<CustomerWithSupervisorVm>();
             supervisor = customerWithSupervisors.Where(c => c.Leader != null).ToList();
             return supervisor;
         }
 
-        public IQueryable<CustomerWithSupervisorVm> GetCustomerWithSupervisors()
+        public IQueryable<NewCustomerWithSupervisorVm> GetCustomerWithSupervisors() // powinna zaciągnąć się lista z imię+nazwisko przełożonego do listy rozwijanej Director/Manager/Leader
         {
-            var cusTypesVm = _customerRepo.GetCustomerWithSupervisors().ProjectTo<CustomerWithSupervisorVm>(_mapper.ConfigurationProvider);
+            var cusTypesVm = _customerRepo.GetCustomerWithSupervisors().ProjectTo<NewCustomerWithSupervisorVm>(_mapper.ConfigurationProvider);
             return cusTypesVm;
         }
     }

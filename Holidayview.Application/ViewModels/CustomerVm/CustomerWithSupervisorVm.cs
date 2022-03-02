@@ -1,8 +1,9 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Holidayview.Application.Mapping;
 using Holidayview.Domain.Model;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class CustomerWithSupervisorVm : IMapFrom<CustomerWithSupervisor>
     {
@@ -10,10 +11,12 @@ namespace Holidayview.Application.ViewModels.Customer
         public string Leader { get; set; }
         public string Manager { get; set; }
         public string Director { get; set; }
+        public int CustomerTypeId { get; set; }
+        public List<CustomerTypeVm> CustomerTypes { get; set; }
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CustomerWithSupervisor, CustomerWithSupervisorVm>();
+            profile.CreateMap<CustomerWithSupervisor, Application.ViewModels.CustomerVm.CustomerWithSupervisorVm>();
         }
     }
 }

@@ -20,10 +20,10 @@ namespace Holidayview.Infrastructure.Repositories
         }
 
         //Dodajemy klienta
-        public async Task<int> AddCustomer(Customer customer)
+        public int AddCustomer(Customer customer)
         {
             _context.Customers.Add(customer);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
             return customer.Id;
         }
         public void AddLeaveBalance(LeaveBalance balance)

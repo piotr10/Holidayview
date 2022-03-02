@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Holidayview.Application.Mapping;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class CustomerForListVm : IMapFrom<Holidayview.Domain.Model.Customer>
     {
@@ -12,7 +12,7 @@ namespace Holidayview.Application.ViewModels.Customer
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Holidayview.Domain.Model.Customer, CustomerForListVm>();
+            profile.CreateMap<Holidayview.Domain.Model.Customer, Application.ViewModels.CustomerVm.CustomerForListVm>();
 
         }
     }

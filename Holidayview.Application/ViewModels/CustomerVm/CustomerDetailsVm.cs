@@ -3,7 +3,7 @@ using AutoMapper;
 using Holidayview.Application.Mapping;
 using Holidayview.Domain.Model;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class CustomerDetailsVm : IMapFrom<Holidayview.Domain.Model.Customer>
     {
@@ -20,7 +20,7 @@ namespace Holidayview.Application.ViewModels.Customer
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Holidayview.Domain.Model.Customer, CustomerDetailsVm>()
+            profile.CreateMap<Holidayview.Domain.Model.Customer, Application.ViewModels.CustomerVm.CustomerDetailsVm>()
                 .ForMember(s => s.CustomerFullName,
                     opt => opt.MapFrom(d => d.Surname + " " + d.Name))
                 .ForMember(s => s.Company,

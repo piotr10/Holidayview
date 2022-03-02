@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Holidayview.Application.Mapping;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class LeaveBalanceForListVm : IMapFrom<Holidayview.Domain.Model.Customer>
     {
@@ -11,7 +11,7 @@ namespace Holidayview.Application.ViewModels.Customer
         public double LeaveTaken { get; set; } //Ilość dni wybranych
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Holidayview.Domain.Model.Customer, LeaveBalanceForListVm>();
+            profile.CreateMap<Holidayview.Domain.Model.Customer, Application.ViewModels.CustomerVm.LeaveBalanceForListVm>();
         }
     }
 }

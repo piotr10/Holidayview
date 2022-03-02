@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Holidayview.Application.Interfaces;
-using Holidayview.Application.ViewModels.Customer;
+using Holidayview.Application.ViewModels.CustomerVm;
 using Holidayview.Domain.Model;
 using Holidayview.Infrastructure;
 

@@ -4,7 +4,7 @@ using Holidayview.Domain.Model;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class NewCustomerVm : IMapFrom<Domain.Model.Customer>
     {
@@ -33,11 +33,12 @@ namespace Holidayview.Application.ViewModels.Customer
         public int VacationId { get; set; }
         //public List<Vacation> Vacations { get; set; }
         public List<CustomerTypeVm> CustomerTypes { get; set; }
-        public List<CustomerWithSupervisorVm> CustomerWithSupervisors { get; set; }
+        public List<NewCustomerWithSupervisorVm> CustomerWithSupervisors { get; set; }
+        public List<CustomerWithSupervisor> CustomerWithSupervisorsTypes { get; set; }
         public ICollection<LeaveBalance> LeaveBalances { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Application.ViewModels.Customer.NewCustomerVm, Domain.Model.Customer>().ReverseMap();
+            profile.CreateMap<Application.ViewModels.CustomerVm.NewCustomerVm, Domain.Model.Customer>().ReverseMap();
         }
     }
 }

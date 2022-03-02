@@ -2,7 +2,7 @@
 using Holidayview.Application.Mapping;
 using Holidayview.Domain.Model;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class CustomerTypeVm : IMapFrom<CustomerType>
     {
@@ -11,7 +11,7 @@ namespace Holidayview.Application.ViewModels.Customer
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CustomerType, CustomerTypeVm>();
+            profile.CreateMap<CustomerType, Application.ViewModels.CustomerVm.CustomerTypeVm>();
         }
     }
 }

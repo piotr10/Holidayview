@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class ListCustomerForListVm
     {

@@ -11,6 +11,8 @@ namespace Holidayview.Domain.Model
         public int IndividualId { get; set; }
         public bool IsActive { get; set; }
 
+        public int CustomerTypeId { get; set; }
+        public virtual CustomerType CustomerType { get; set; }
         //Customers with supervisors to choice
         public virtual ICollection<CustomerWithSupervisor> CustomerWithSupervisors { get; set; }
 

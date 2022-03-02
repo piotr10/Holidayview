@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Holidayview.Application.Interfaces;
 using Holidayview.Application.Services;
-using Holidayview.Application.ViewModels.Customer;
+using Holidayview.Application.ViewModels.CustomerVm;
 using Holidayview.Domain.Model;
 using Holidayview.Infrastructure;
 using Holidayview.Web.Helpers.CustomerHelper;
@@ -71,10 +71,9 @@ namespace Holidayview.Web.Controllers
        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCustomer(NewCustomerVm model)
+        public IActionResult AddCustomer(NewCustomerVm model)
         {
-            try
-            {
+         
                 #region Dropdownlist
                 ViewData["CompanyId"] = new SelectList(_context.Companies, "Id", "Name", model.CompanyId);
                 ViewData["DirectorId"] = new SelectList(_context.Directors, "Id", "Name", model.DirectorId);
@@ -87,16 +86,14 @@ namespace Holidayview.Web.Controllers
                 List<Vacation> vacation = new List<Vacation>();
                 AddBalanceOfLeave balanceOfLeave = new AddBalanceOfLeave(_context, _customerService);
                 model.IsActive = true;
+                //model.CustomerTypes = _customerService.CheckCustomerTypeList(model.CustomerTypes);
                 model.CustomerWithSupervisors = _customerService.CheckCustomerWithSupervisorList(model.CustomerWithSupervisors);
-                var id = await _customerService.AddCustomer(model);
+                
+                var id = _customerService.AddCustomer(model);
                 balanceOfLeave.AddNewBalanceOfLeave(model, vacation, id);
 
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return RedirectToAction(nameof(Index));
-            }
+ 
         }
         
         public IActionResult Edit(int id)

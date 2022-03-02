@@ -3,7 +3,7 @@ using AutoMapper;
 using Holidayview.Application.Mapping;
 using Holidayview.Domain.Model;
 
-namespace Holidayview.Application.ViewModels.Customer
+namespace Holidayview.Application.ViewModels.CustomerVm
 {
     public class NewCustomerWithSupervisorVm : IMapFrom<CustomerWithSupervisor>
     {
@@ -16,10 +16,10 @@ namespace Holidayview.Application.ViewModels.Customer
         public List<CustomerTypeVm> CustomerTypes { get; set; }
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<CustomerWithSupervisor, NewCustomerWithSupervisorVm>()
-                .ForMember(s => s.Leader, opt => opt.MapFrom(d => d.Customer.Name))
-                .ForMember(s => s.Manager, opt => opt.MapFrom(d => d.Customer.Name))
-                .ForMember(s => s.Director, opt => opt.MapFrom(d => d.Customer.Name));
+            profile.CreateMap<Application.ViewModels.CustomerVm.NewCustomerWithSupervisorVm, CustomerWithSupervisor>().ReverseMap()
+                .ForMember(s => s.Leader, opt => opt.MapFrom(d => d.Customer.Name + " " + d.Customer.Surname))
+                .ForMember(s => s.Manager, opt => opt.MapFrom(d => d.Customer.Name + " " + d.Customer.Surname))
+                .ForMember(s => s.Director, opt => opt.MapFrom(d => d.Customer.Name + " " + d.Customer.Surname));
         }
     }
 }

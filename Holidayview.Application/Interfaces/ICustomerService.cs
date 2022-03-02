@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Holidayview.Application.ViewModels.Customer;
+using Holidayview.Application.ViewModels.CustomerVm;
 using Holidayview.Domain.Model;
 
 namespace Holidayview.Application.Interfaces
@@ -9,7 +9,7 @@ namespace Holidayview.Application.Interfaces
     public interface ICustomerService
     {
         ListCustomerForListVm GetAllCustomersForList(int pageSize, int pageNu, string searchString);
-        Task<int> AddCustomer(NewCustomerVm customer);
+        int AddCustomer(NewCustomerVm customer);
         void AddLeaveBalance(LeaveBalance balance);
         CustomerDetailsVm GetCustomerDetails(int? customerId);
         NewCustomerVm GetCustomerForEdit(int id);
@@ -18,8 +18,8 @@ namespace Holidayview.Application.Interfaces
 
         NewCustomerVm SetParametersToVm(NewCustomerVm model);
         IQueryable<CustomerTypeVm> GetCustomerTypes();
-        IQueryable<CustomerWithSupervisorVm> GetCustomerWithSupervisors();
-        List<NewCustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<NewCustomerWithSupervisorVm> newSupervisor);
-        List<CustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<CustomerWithSupervisorVm> customerWithSupervisors);
+        IQueryable<NewCustomerWithSupervisorVm> GetCustomerWithSupervisors();
+        List<NewCustomerWithSupervisorVm> CheckCustomerWithSupervisorList(List<NewCustomerWithSupervisorVm> customerWithSupervisors);
+        List<CustomerTypeVm> CheckCustomerTypeList(List<CustomerTypeVm> customerTypes);
     }
 }
