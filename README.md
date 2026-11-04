@@ -11,7 +11,7 @@ I built it from my own experience in HR & payroll, where keeping leave balances 
 - **Employee register:** name, e-mail, internal ID, employee type, company and active/inactive status (soft delete)
 - **Reporting line:** every employee is linked to a team leader, manager and director
 - **Leave entitlement:**
-  - the yearly entitlement (e.g. 20 or 26 days) is assigned when the employee is created;
+  - the yearly entitlement (20, 26, 30 or 36 days) is assigned when the employee is created;
   - a disability flag is stored, since in Poland it can affect the entitlement
 - **Leave balance:** per-employee entitlement, days taken and days remaining, created automatically with the employee record
 - **Search and paging** on the employee list
@@ -74,7 +74,7 @@ Holidayview.Test            → xUnit test project
    ```bash
    dotnet run --project Holidayview.Web
    ```
-4. Fill in the dictionary tables (`Companies`, `Vacations`, `Leaders`, `Managers`, `Directors`, `CustomerTypes`, `Disables`), then add employees from the UI.
+4. The migrations seed the dictionary tables with sample data: employee types, example leaders, managers, directors and companies, the disability flag, and entitlement levels of 20 / 26 / 30 / 36 days. You can add employees from the UI straight away.
 
 ## 🗺️ Roadmap
 
