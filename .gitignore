@@ -1,0 +1,21 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.DotSettings.user
+
+# Runtime logs
+Logs/
+*.log
+
+# Local secrets and generated signing keys
+tempkey.jwk
+tempkey.json
+*.pfx
+.env
+secrets.json
